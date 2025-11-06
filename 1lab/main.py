@@ -52,18 +52,4 @@ worst_student = avg_grades[0]  # первый в отсортированном 
 print(f"\nЛучший студент: {best_student[0]} со средним баллом {best_student[1]:.2f}")
 print(f"Худший студент: {worst_student[0]} со средним баллом {worst_student[1]:.2f}")
 
-# Дополнительно: выведем всех студентов по убыванию успеваемости
-print("\nРейтинг студентов:")
-for i, (student, avg) in enumerate(reversed(avg_grades), 1):
-    print(f"{i}. {student}: {avg:.2f}")
 
-# Ещё дополнительная информация - статистика по группе
-print("\n" + "="*50)
-all_grades = [grade for student_grades in grades for grade in student_grades]
-avg_group = sum(all_grades) / len(all_grades)
-print(f"Средний балл по группе: {avg_group:.2f}")
-print(f"Всего студентов: {len(students)}")
-print(f"Отличников (средний ≥ 4.5): {len([avg for _, avg in avg_grades if avg >= 4.5])}")
-print(f"Хорошистов (средний 3.5-4.49): {len([avg for _, avg in avg_grades if 3.5 <= avg < 4.5])}")
-print(f"Троечников (средний 2.5-3.49): {len([avg for _, avg in avg_grades if 2.5 <= avg < 3.5])}")
-print(f"Неуспевающих (средний < 2.5): {len([avg for _, avg in avg_grades if avg < 2.5])}")
